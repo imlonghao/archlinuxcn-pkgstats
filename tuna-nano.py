@@ -25,7 +25,7 @@ def parser(line):
     if not match:
         return result
     result['remote_addr'] = match.group(1)
-    date = datetime.strptime(match.group(2), '%d/%b/%Y:%H:%M:%S +0800')
+    date = datetime.strptime(match.group(2), '%d/%b/%Y:%H:%M:%S %z')
     result['time'] = int(datetime.timestamp(date))
     result['method'] = match.group(3)
     result['url'] = match.group(4)
