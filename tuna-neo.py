@@ -99,4 +99,4 @@ if __name__ == '__main__':
                     "value": 1
                 }
             })
-    client.write_points(result)
+    client.write_points(result, batch_size=5000)
