@@ -66,7 +66,7 @@ def parser(line):
 
 
 if __name__ == '__main__':
-    client = InfluxDBClient(DBHOST, DBPORT, DBUSER, DBPASS, DBNAME, DBSSL)
+    client = InfluxDBClient(DBHOST, DBPORT, DBUSER, DBPASS, DBNAME, True, True)
     result = []
     for line in sys.stdin:
         if 'archlinuxcn' not in line:
