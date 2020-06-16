@@ -62,8 +62,6 @@ if __name__ == '__main__':
     client = InfluxDBClient(DBHOST, DBPORT, DBUSER, DBPASS, DBNAME, True, True)
     result = []
     for line in sys.stdin:
-        if 'archlinuxcn' not in line:
-            continue
         i = parser(line)
         if i.get('package') and is_valid(i.get('remote_addr'), i):
             geo = ip2geo(i.get('remote_addr'))
